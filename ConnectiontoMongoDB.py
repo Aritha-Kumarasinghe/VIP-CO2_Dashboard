@@ -30,6 +30,7 @@ df_outdoor['date'] = df_outdoor['datetime'].dt.date
 df_outdoor.to_excel('outdoor.xlsx')
 
 app = dash.Dash(__name__)
+server=app.server
 
 
 

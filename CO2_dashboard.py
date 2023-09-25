@@ -6,7 +6,6 @@ import dash
 from dash import dcc
 from dash import html
 import plotly.express as px
-import plotly.graph_objs as go
 
 URI="mongodb+srv://userdb:userdb1@atlascluster.akwsryc.mongodb.net/"
 client = MongoClient(URI)
@@ -26,8 +25,6 @@ df_outdoor=pd.DataFrame(outdoor_data)
 df_outdoor.rename(columns={'date':'datetime'},inplace = True)
 df_outdoor['time'] = df_outdoor['datetime'].dt.strftime('%H:%M:%S')
 df_outdoor['date'] = df_outdoor['datetime'].dt.date
-
-df_outdoor.to_excel('outdoor.xlsx')
 
 app = dash.Dash(__name__)
 server=app.server

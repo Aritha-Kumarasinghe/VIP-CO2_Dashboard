@@ -30,6 +30,7 @@ df_outdoor.sort_values(by=['datetime'])
 
 
 app = dash.Dash(__name__)
+server=app.server
 
 
 
